@@ -1,0 +1,66 @@
+# program 1
+Input = "hello"
+Output = Input[::-1]
+print(Output)
+
+# program 2
+Input = "madam"
+if Input == Input[::-1]:
+    print("True")
+else:
+    print("False")
+
+# program 3
+Input = "Python"
+vowels = "aeiouAEIOU"
+vowelCount = 0
+consonantCount = 0
+for letters in Input:
+    if letters.isalpha():
+        if letters in vowels:
+            vowelCount += 1
+        else:
+            consonantCount += 1
+print(f"Vowels: {vowelCount}")
+print(f"Consonants: {consonantCount}")
+
+# program 4
+Input = "aabbccd"
+Output = {}
+for var in Input:
+    if var in Output:
+        Output[var] += 1
+    else:
+        Output[var] = 1
+print(Output)
+
+
+
+# program 5
+Input = " a b c "
+Output = Input.replace("","")
+print(Output)
+
+# program 6
+Input = "I like Java"
+Output = Input.replace("Java", "Python")
+print(Output)
+
+# program 7
+Input = "abc123def"
+Output = ''.join([char for char in Input if char.isdigit()])
+print(Output)
+
+# program 8
+Input = "Hello123"
+Output = Input.isalpha()
+print(Output)
+
+# program 9
+Input = "hello world"
+Output = ' '.join([word.capitalize() for word in Input.split()])
+print(Output)
+
+
+
+
