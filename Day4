@@ -1,0 +1,107 @@
+# program 1
+day = 3
+match day:
+    case 1:
+        print("Monday")
+    case 2:
+        print("Tuesday")
+    case 3:
+        print("Wednesday")
+    case 4:
+        print("Thursday")
+    case 5:
+        print("Friday")
+    case 6:
+        print("Saturday")
+    case 7:
+        print("Sunday")
+    case _:
+        print("Invalid days")
+
+# program 2
+number = 5
+for i in range(1, 11):
+    print(f"{number} x {i} = {number * i}")
+
+# program 3
+import random
+acutalNumber = random.randint(1, 100)
+guessedNumber = -1
+attempts = 0
+while guessedNumber != acutalNumber:
+    guessedNumber = int(input("Guess the number "))
+    attempts += 1
+    if guessedNumber < acutalNumber:
+        print("Too low!")
+    elif guessedNumber > acutalNumber:
+        print("Too high!")
+    else:
+        print(f"Correct! You guessed it in {attempts} attempts.")
+
+# program 4
+def is_prime(n):
+    if n < 2:
+        return False
+    else:
+        for i in range(2, n):
+            if n % i == 0:
+                return False
+        else:
+            return True
+
+for i in range(1,100):
+    if is_prime(i):
+        print(i)
+
+# porgram 5
+people = [("Alice", 35), ("Bob", 25), ("Charlie", 35)]
+people.sort(key=lambda person: person[1])
+print(people)
+
+# program 6
+original = [1, 2, 3, 4, 5]
+reverse = original[::-1]
+print(reverse)
+
+# program 7
+class BankAccount:
+    def __init__(self):
+        self.balance = 0
+
+    def deposit(self, amount):
+        self.balance += amount
+        print(f"Deposited ${amount}")
+
+    def withdraw(self, amount):
+        if amount <= self.balance:
+            self.balance -= amount
+            print(f"Withdraw ${amount}")
+        else:
+            print("Insufficient balance")
+
+    def get_balance(self):
+        print(f"Current balance: ${self.balance}")
+
+account = BankAccount()
+account.deposit(5000)
+account.withdraw(1000)
+account.get_balance()
+
+
+# program 8
+number = 7
+fact = 1
+temp = number
+while temp > 1:
+    fact *= temp
+    temp -= 1
+print(f"Factorial of {number} is {fact}")
+
+# program 6
+def is_palindrome(word):
+    if word == word[::-1]:
+        return "is palindrome"
+    else:
+        return "not palindrome"
+
+print(is_palindrome("hello"))
