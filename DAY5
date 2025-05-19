@@ -1,0 +1,175 @@
+# program 1
+class Employee:
+    def calculate_bonus(self):
+        return 0
+
+class Manager(Employee):
+    def calculate_bonus(self):
+        return 300
+
+class Developer(Employee):
+    def calculate_bonus(self):
+        return 200
+
+class Intern(Employee):
+    def calculate_bonus(self):
+        return 100
+
+employees = [Manager(), Developer(), Intern()]
+for emp in employees:
+    print(f"{emp.__class__.__name__} bonus: {emp.calculate_bonus()}")
+
+# program 2
+class Vehicle:
+    def details(self):
+        return f"{self.__class__.__name__} max speed: {self.get_max_speed()} km/h"
+
+    def get_max_speed(self):
+        return 0
+
+class Car(Vehicle):
+    def get_max_speed(self):
+        return 300
+
+class Truck(Vehicle):
+    def get_max_speed(self):
+        return 400
+
+class Motorcycle(Vehicle):
+    def get_max_speed(self):
+        return 100
+
+vehicles = [Car(), Truck(), Motorcycle()]
+for vehicle in vehicles:
+    print(vehicle.details())
+
+# program 3
+class Notification:
+    def send_notification(self):
+        pass
+
+class EmailNotification(Notification):
+    def send_notification(self):
+        print("This is email notification.")
+
+class SMSNotification(Notification):
+    def send_notification(self):
+        print("This is SMS notification.")
+
+class PushNotification(Notification):
+    def send_notification(self):
+        print("This is push notification.")
+
+notifications = [EmailNotification(), SMSNotification(), PushNotification()]
+for notification in notifications:
+    notification.send_notification()
+
+# program 4
+class PaymentMethod:
+    def pay(self, amount):
+        pass
+
+class CreditCard(PaymentMethod):
+    def pay(self, amount):
+        print(f"Paid {amount} using Credit Card.")
+
+class PayPal(PaymentMethod):
+    def pay(self, amount):
+        print(f"Paid {amount} using PayPal.")
+
+class CryptoCurrency(PaymentMethod):
+    def pay(self, amount):
+        print(f"Paid {amount} using CryptoCurrency.")
+
+def checkout(payment_method, amount):
+    payment_method.pay(amount)
+
+checkout(CreditCard(), 100)
+checkout(PayPal(), 200)
+checkout(CryptoCurrency(), 300)
+
+# program
+class Animal:
+    def make_sound(self):
+        pass
+
+class Dog(Animal):
+    def make_sound(self):
+        print("Dog Bark")
+
+class Cat(Animal):
+    def make_sound(self):
+        print("Cat sound")
+
+class Cow(Animal):
+    def make_sound(self):
+        print("Cow Sound")
+
+animals = [Dog(), Cat(), Cow()]
+for animal in animals:
+    animal.make_sound()
+
+# program
+class MyRange:
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
+        self.current = start
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.current >= self.end:
+            raise StopIteration
+        self.current += 1
+        return self.current - 1
+for num in MyRange(1, 5):
+    print("Range",num)
+
+# program
+class Fibonacci:
+    def __init__(self, limit):
+        self.limit = limit
+        self.a, self.b = 0, 1
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.a > self.limit:
+            raise StopIteration
+
+        next_value = self.a
+        self.a, self.b = self.b, self.a + self.b
+        return next_value
+
+fib = Fibonacci(50)
+for num in fib:
+    print("fibnonacci",num)
+
+# program
+class ReverseString:
+    def __init__(self, text):
+        self.text = text
+        self.index = len(text) - 1
+
+    def __iter__(self):
+
+        return self
+
+    def __next__(self):
+        if self.index >= 0:
+            char = self.text[self.index]
+            self.index -= 1
+            return char
+        else:
+
+            raise StopIteration
+
+reverse_iterator = ReverseString("Hello")
+for char in reverse_iterator:
+    print(char,end="")
+
+
+
